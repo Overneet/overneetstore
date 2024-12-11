@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topup Game Online</title>
+  <style>
+    /* CSS umum */
+    body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #000000;
+            color: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            position: fixed; /* Menjadikan header tetap di atas */
+            top: 0;
+            width: 100%; /* Lebar penuh */
+            z-index: 1000; /* Supaya header berada di atas konten lain */
+        }
+
+    .logo img {
+      height: 90px;
+    }
+
+    /* Slider */
+    .slider {
+      position: relative;
+      overflow: hidden;
+      height: 500px;
+    }
+    .slider img {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+    .slider img.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Rekomendasi, Produk, dan News */
+    .recommendations, .produk, .produk2, .news {
+      padding: 20px;
+    }
+
+    .recommendations h2, .produk h2, .produk2 h2, .news h2 {
+      margin-bottom: 20px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .recommendation-items, .produk-items, .produk2-items, .news-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .card, .produk-card, .produk2-card {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+      flex: 1;
+      max-width: 2000px;
+    }
+
+    /* News layout: Image left, text right */
+    .news-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .news-item img {
+      width: 150px;
+      height: auto;
+    }
+
+    .news-text {
+      flex: 1;
+    }
+
+    .news-text h3 {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .news-text p {
+      font-size: 12px;
+      color: #666;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #000000;
+      margin-top: 20px;
+    }
+
+    footer img {
+      width: 200px;
+    }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+      .news-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .news-item img {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Overneet.png" alt="Logo" />
+  </header>
+
+  <main>
+    <!-- Banner -->
+    <div class="slider-section" style="margin-top: 50px;">
+        <div class="slider" id="slider">
+            <img src="Nikke.png" alt="Gambar 1" class="active">
+            <img src="Zenless Zone Zero.png" alt="Gambar 2">
+            <img src="Call Of Duty Mobile.jpeg" alt="Gambar 3">
+            <img src="Blue Archive.png" alt="Gambar 4">
+        </div>
+    </div>
+
+    <!-- Rekomendasi -->
+    <section class="recommendations">
+      <h2>RECOMMEND  |  Produk yang direkomendasikan</h2>
+      <div class="recommendation-items">
+        <div class="card">
+          <a href="https://www.mobilelegends.com"><img src="Mobile Legends Bang Bang.jpeg" alt="Rekomendasi 1" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="https://www.freefire.com"><img src="Free Fire.jpeg" alt="Rekomendasi 2" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="https://www.pubgmobile.com"><img src="PUBG Mobile.png" alt="Rekomendasi 3" style="width: 150px;"/></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Produk Next -->
+    <section class="produk2">
+      <h2>COMING SOON  |  Produk yang akan datang</h2>
+      <div class="produk2-items">
+        <div class="card">
+          <a href="soon.html"><img src="Heartwood Online.png" alt="Rekomendasi 1" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Honor Of King.png" alt="Rekomendasi 1" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Call Of Duty Mobile.jpeg" alt="Rekomendasi 3" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Arena Of Valor.png" alt="Rekomendasi 2" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="League Of legends Wild Rift.png" alt="Rekomendasi 3" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Growtopia.jpeg" alt="Rekomendasi 1" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Curse Of Aros.jpeg" alt="Rekomendasi 2" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Pixel Worlds.jpeg" alt="Rekomendasi 2" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Rucoy Online.jpeg" alt="Rekomendasi 2" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Arknight.png" alt="Rekomendasi 1" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Guardian Tales.png" alt="Rekomendasi 1" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="blue archive.png" alt="Rekomendasi 2" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Albion Online.png" alt="Rekomendasi 3" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Azur Lane.png" alt="Rekomendasi 1" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Nikke.png" alt="Rekomendasi 2" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Wuthering waves.png" alt="Rekomendasi 2" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Genshin Impact.png" alt="Rekomendasi 2" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Zenless Zone Zero.png" alt="Rekomendasi 2" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Clash Of Clans.png" alt="Rekomendasi 2" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Stumble Guys.png" alt="Rekomendasi 1" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Brawl Star.png" alt="Rekomendasi 1" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Roblox.png" alt="Rekomendasi 1" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Clash Royale.png" alt="Rekomendasi 1" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Honkai Impact 3rd.png" alt="Rekomendasi 2" style="width: 150px;"/></a>
+        </div>
+        <div class="card">
+          <a href="soon.html"><img src="Honkai Star Rail.png" alt="Rekomendasi 2" style="width: 150px;"/></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWS Section -->
+    <section class="news">
+      <h2>NEWS  |  Berita Terbaru</h2>
+      <div class="news-items">
+        <div class="news-item">
+          <a href="https://www.example.com/news1">
+            <img src="20240817_151433.jpg" alt="News 1" />
+          </a>
+          <div class="news-text">
+            <h3>Hello Growtopians! 🏥</h3>
+            <p>New state-of-the-art equipment dedicated to providing exceptional medical care to you has been added! 🩺 
+              Read more: <a href="spr.ly/6000mzGiO" target="_blank">spr.ly/6000mzGiO</a></p>
+          </div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.example.com/news1">
+            <img src="20240817_151433.jpg" alt="News 1" />
+          </a>
+          <div class="news-text">
+            <h3>Hello Growtopians! 🏥</h3>
+            <p>New state-of-the-art equipment dedicated to providing exceptional medical care to you has been added! 🩺 
+              Read more: <a href="spr.ly/6000mzGiO" target="_blank">spr.ly/6000mzGiO</a></p>
+          </div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.example.com/news1">
+            <img src="20240817_151433.jpg" alt="News 1" />
+          </a>
+          <div class="news-text">
+            <h3>Hello Growtopians! 🏥</h3>
+            <p>New state-of-the-art equipment dedicated to providing exceptional medical care to you has been added! 🩺 
+              Read more: <a href="spr.ly/6000mzGiO" target="_blank">spr.ly/6000mzGiO</a></p>
+          </div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.example.com/news1">
+            <img src="20240911_223549.jpg" alt="News 1" />
+          </a>
+          <div class="news-text">
+            <h3>Growtopians with a great thirst for adventure, hear us! 🗨️</h3>
+            <p>The cave walls have cracked open, and we are beyond excited to announce the new content — Dungeons Beta! 📖 
+              Read the complete announcement on the forum for more info: <a href="spr.ly/60020pfw" target="_blank">spr.ly/60020pfw</a></p>
+          </div>
+        </div>
+        <!-- Artikel berita lainnya bisa ditambahkan di sini -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p style="color:#ddd">About this site | terms of service | Privacy Policy | FAQ | inquiry</p>
+    <div class="">
+      <a href="indek.html"><img src="1_20241208_111922_0000-picsay.png" alt="Logo Footer" />
+  </footer>
+
+  <script>
+    // Script untuk slider
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('#slider img');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active'); // Hapus kelas active dari semua slide
+        if (i === index) {
+          slide.classList.add('active'); // Tambahkan kelas active pada slide yang ditampilkan
+        }
+      });
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+      showSlide(currentSlide);
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+      showSlide(currentSlide);
+    }
+
+    // Tampilkan slide pertama
+    showSlide(currentSlide);
+
+    // Auto-slide setiap 5 detik
+    setInterval(nextSlide, 5000);
+
+  </script>
+</body>
+</html>

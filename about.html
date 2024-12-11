@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Pembayaran</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Form Pembayaran</h1>
+    <form id="paymentForm">
+      <label for="amount">Jumlah:</label><br>
+      <select id="amount">
+        <option value="15000">50 - Rp 15.000</option>
+        <option value="30000">100 - Rp 30.000</option>
+        <option value="75000">500 - Rp 75.000</option>
+      </select><br><br>
+
+      <label for="nickname">Nickname:</label><br>
+      <input type="text" id="nickname" required><br><br>
+
+      <label for="id">ID:</label><br>
+      <input type="text" id="id" required><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" required><br><br>
+
+      <label for="phone">Nomor Telepon:</label><br>
+      <input type="tel" id="phone" required><br><br>
+
+      <button type="button" id="payButton">Bayar Sekarang</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('payButton').addEventListener('click', function(e) {
+      e.preventDefault(); // Mencegah submit form default
+
+      // Ambil nilai input
+      const amount = document.getElementById('amount').value;
+      const nickname = document.getElementById('nickname').value;
+      const id = document.getElementById('id').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+
+      // Validasi input
+      if (!nickname || !id || !email || !phone) {
+        alert("Harap lengkapi semua field.");
+        return;
+      }
+
+      // Membuat pesan
+      const message = Halo! Berikut detail pembayaran saya:\n\n +
+                      - Jumlah: Rp ${amount}\n +
+                      - Nickname: ${nickname}\n +
+                      - ID: ${id}\n +
+                      - Email: ${email}\n +
+                      - No. Telepon: ${phone};
+
+      // Encode pesan untuk URL
+      const encodedMessage = encodeURIComponent(message);
+
+      // Nomor WhatsApp tujuan
+      const whatsappNumber = '6288802689233'; // Nomor WhatsApp tujuan
+      const whatsappURL = https://wa.me/${whatsappNumber}?text=${encodedMessage};
+
+      // Coba buka URL WhatsApp langsung
+      window.location.href = whatsappURL;
+    });
+  </script>
+</body>
+</html>
